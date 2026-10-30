@@ -1,0 +1,1467 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>INKORA | Iniciar sesión</title>
+
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+
+
+    <link rel="stylesheet" href="../../Assets/css/login.css" />
+
+
+
+    <style>
+        .login-card {
+
+            width: 100%;
+            max-width: 455px;
+
+            padding: 30px 32px 25px;
+
+            border-radius: 24px;
+
+        }
+
+
+
+        .login-header {
+
+            margin-bottom: 22px;
+
+        }
+
+        .login-header h1 {
+
+            margin-top: 6px;
+
+            font-size: 38px;
+
+            font-weight: 900;
+
+            letter-spacing: -1.5px;
+
+        }
+
+        .login-header p {
+
+            margin-top: 8px;
+
+            line-height: 1.55;
+
+        }
+
+
+
+
+        .login-success {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            margin-bottom: 18px;
+
+            padding: 12px 14px;
+
+            border-radius: 12px;
+
+            background: rgba(34, 197, 94, .10);
+
+            border: 1px solid rgba(34, 197, 94, .25);
+
+            color: #bbf7d0;
+
+            font-size: 12px;
+
+        }
+
+
+
+
+        .login-error {
+
+            margin-bottom: 18px;
+
+            padding: 12px 14px;
+
+            border-radius: 12px;
+
+            background: rgba(239, 68, 68, .10);
+
+            border: 1px solid rgba(239, 68, 68, .25);
+
+            color: #fecaca;
+
+            font-size: 12px;
+
+        }
+
+        .login-error ul {
+
+            margin: 0;
+
+            padding-left: 18px;
+
+        }
+
+
+
+
+        .form-group {
+
+            margin-bottom: 16px;
+
+        }
+
+
+        .form-group>label,
+        .password-label-row label {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            width: 100%;
+
+            margin-bottom: 7px;
+
+            color: #dceaf3;
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            letter-spacing: .3px;
+
+        }
+
+
+        .form-group>label span,
+        .password-label-row label span {
+
+            color: #63d9ef;
+
+            font-size: 8px;
+
+            font-weight: 800;
+
+            letter-spacing: 1px;
+
+        }
+
+
+
+
+        .input-wrapper {
+
+            position: relative;
+
+            width: 100%;
+
+            height: 52px;
+
+            display: flex;
+
+            align-items: center;
+
+            overflow: hidden;
+
+            border: 1px solid rgba(125, 211, 252, .19);
+
+            border-radius: 13px;
+
+            background: rgba(4, 20, 34, .82);
+
+            transition: all .25s ease;
+
+        }
+
+
+        .input-wrapper:hover {
+
+            border-color: rgba(125, 211, 252, .35);
+
+        }
+
+
+        .input-wrapper:focus-within {
+
+            border-color: #31d8f5;
+
+            box-shadow:
+                0 0 0 3px rgba(49, 216, 245, .08),
+                0 0 25px rgba(49, 216, 245, .07);
+
+        }
+
+
+
+
+        .input-icon-box {
+
+            width: 48px;
+
+            min-width: 48px;
+
+            height: 100%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: #62dff6;
+
+            font-size: 16px;
+
+            border-right: 1px solid rgba(125, 211, 252, .10);
+
+            background: rgba(34, 211, 238, .025);
+
+        }
+
+
+
+
+        .input-content {
+
+            flex: 1;
+
+            height: 100%;
+
+            display: flex;
+
+            align-items: center;
+
+        }
+
+
+        .inkora-input {
+
+            width: 100%;
+
+            height: 100%;
+
+            border: 0;
+
+            outline: none;
+
+            padding: 0 14px;
+
+            background: transparent;
+
+            color: #ffffff;
+
+            font-family: "Inter", sans-serif;
+
+            font-size: 13px;
+
+            font-weight: 500;
+
+        }
+
+
+        .inkora-input::placeholder {
+
+            color: rgba(174, 199, 211, .42);
+
+        }
+
+
+
+
+        .password-button {
+
+            width: 48px;
+
+            height: 100%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border: 0;
+
+            background: transparent;
+
+            color: #7f9baa;
+
+            cursor: pointer;
+
+            transition: .2s;
+
+        }
+
+
+        .password-button:hover {
+
+            color: #61e1f7;
+
+        }
+
+
+        .password-button i {
+
+            font-size: 16px;
+
+        }
+
+
+
+        .field-error {
+
+            display: block;
+
+            margin-top: 5px;
+
+            color: #ff8e9f;
+
+            font-size: 9px;
+
+            font-weight: 600;
+
+        }
+
+
+
+
+        .role-box {
+
+            margin-top: 4px;
+
+            margin-bottom: 16px;
+
+        }
+
+
+        .role-box>label {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            margin-bottom: 7px;
+
+            color: #dceaf3;
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+        }
+
+
+        .role-box>label span:last-child {
+
+            color: #63d9ef;
+
+            font-size: 8px;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        .role-select {
+
+            width: 100%;
+
+            height: 52px;
+
+            padding: 0 15px;
+
+            border: 1px solid rgba(125, 211, 252, .19);
+
+            border-radius: 13px;
+
+            outline: none;
+
+            background: rgba(4, 20, 34, .88);
+
+            color: #ffffff;
+
+            font-family: "Inter", sans-serif;
+
+            font-size: 13px;
+
+            font-weight: 500;
+
+            cursor: pointer;
+
+            transition: .25s;
+
+        }
+
+
+        .role-select:hover {
+
+            border-color: rgba(125, 211, 252, .35);
+
+        }
+
+
+        .role-select:focus {
+
+            border-color: #31d8f5;
+
+            box-shadow: 0 0 0 3px rgba(49, 216, 245, .08);
+
+        }
+
+
+        .role-select option {
+
+            background: #071b2d;
+
+            color: white;
+
+        }
+
+
+        .role-help {
+
+            display: block;
+
+            margin-top: 6px;
+
+            color: rgba(154, 184, 198, .60);
+
+            font-size: 9px;
+
+            line-height: 1.4;
+
+        }
+
+
+
+        .login-options {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 10px;
+
+            margin-top: 2px;
+
+            margin-bottom: 17px;
+
+        }
+
+
+        .remember-option {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            cursor: pointer;
+
+            color: #a9beca;
+
+            font-size: 10px;
+
+            user-select: none;
+
+        }
+
+
+        .remember-checkbox {
+
+            position: absolute;
+
+            opacity: 0;
+
+            pointer-events: none;
+
+        }
+
+
+        .custom-check {
+
+            width: 17px;
+
+            height: 17px;
+
+            min-width: 17px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border: 1px solid rgba(125, 211, 252, .28);
+
+            border-radius: 5px;
+
+            background: rgba(4, 20, 34, .85);
+
+            transition: .2s;
+
+        }
+
+
+        .custom-check i {
+
+            display: none;
+
+            color: #06141f;
+
+            font-size: 11px;
+
+            font-weight: 900;
+
+        }
+
+
+        .remember-checkbox:checked+.custom-check {
+
+            border-color: #45dff8;
+
+            background: #45dff8;
+
+            box-shadow: 0 0 12px rgba(69, 223, 248, .20);
+
+        }
+
+
+        .remember-checkbox:checked+.custom-check i {
+
+            display: block;
+
+        }
+
+
+        .remember-text {
+
+            white-space: nowrap;
+
+        }
+
+
+
+
+        .forgot-password {
+
+            color: #63d9ef;
+
+            text-decoration: none;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            transition: .2s;
+
+        }
+
+
+        .forgot-password:hover {
+
+            color: #ffffff;
+
+            text-decoration: none;
+
+        }
+
+
+
+
+        .login-submit {
+
+            position: relative;
+
+            width: 100%;
+
+            height: 54px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            overflow: hidden;
+
+            border: 1px solid rgba(108, 229, 255, .45);
+
+            border-radius: 13px;
+
+            background:
+                linear-gradient(135deg,
+                    #16bddc,
+                    #087fae);
+
+            color: #ffffff;
+
+            font-family: "Inter", sans-serif;
+
+            font-size: 12px;
+
+            font-weight: 900;
+
+            letter-spacing: .5px;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 12px 30px rgba(0, 145, 190, .22),
+                inset 0 1px 0 rgba(255, 255, 255, .20);
+
+            transition: all .25s ease;
+
+        }
+
+
+        .login-submit::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(100deg,
+                    transparent 20%,
+                    rgba(255, 255, 255, .16) 50%,
+                    transparent 80%);
+
+            transform: translateX(-100%);
+
+            transition: .55s;
+
+        }
+
+
+        .login-submit:hover {
+
+            transform: translateY(-2px);
+
+            border-color: rgba(150, 240, 255, .75);
+
+            box-shadow:
+                0 16px 35px rgba(0, 145, 190, .32),
+                0 0 25px rgba(49, 216, 245, .12);
+
+        }
+
+
+        .login-submit:hover::before {
+
+            transform: translateX(100%);
+
+        }
+
+
+        .login-submit:active {
+
+            transform: translateY(0);
+
+        }
+
+
+        .button-icon,
+        .button-text,
+        .button-arrow {
+
+            position: relative;
+
+            z-index: 2;
+
+        }
+
+
+        .button-icon {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 14px;
+
+        }
+
+
+        .button-arrow {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 13px;
+
+        }
+
+
+
+
+        .register-link {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 5px;
+
+            margin-top: 17px;
+
+            padding-top: 15px;
+
+            border-top: 1px solid rgba(125, 211, 252, .10);
+
+            color: rgba(166, 193, 205, .62);
+
+            font-size: 10px;
+
+        }
+
+
+        .register-link a {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 4px;
+
+            color: #62dff6;
+
+            text-decoration: none;
+
+            font-weight: 800;
+
+            transition: .2s;
+
+        }
+
+
+        .register-link a:hover {
+
+            color: #ffffff;
+
+        }
+
+
+
+
+        .back-home {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 6px;
+
+            margin-top: 11px;
+
+            color: rgba(166, 193, 205, .55);
+
+            text-decoration: none;
+
+            font-size: 9px;
+
+            font-weight: 600;
+
+            transition: .2s;
+
+        }
+
+
+        .back-home:hover {
+
+            color: #62dff6;
+
+        }
+
+
+        .back-home i {
+
+            font-size: 11px;
+
+        }
+
+
+
+        .login-footer {
+
+            margin-top: 13px;
+
+            padding-top: 11px;
+
+            border-top: 1px solid rgba(125, 211, 252, .07);
+
+        }
+
+
+
+
+        @media (max-width: 650px) {
+
+            .login-card {
+
+                max-width: 100%;
+
+                padding: 26px 20px 22px;
+
+            }
+
+            .login-header h1 {
+
+                font-size: 32px;
+
+            }
+
+        }
+
+
+        @media (max-width: 430px) {
+
+            .login-card {
+
+                padding: 23px 17px 20px;
+
+                border-radius: 20px;
+
+            }
+
+            .login-header h1 {
+
+                font-size: 29px;
+
+            }
+
+            .input-wrapper,
+            .role-select {
+
+                height: 49px;
+
+            }
+
+            .login-submit {
+
+                height: 51px;
+
+            }
+
+            .login-options {
+
+                align-items: flex-start;
+
+                flex-direction: column;
+
+            }
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+
+
+    <div class="login-background">
+
+        <video class="login-video" autoplay muted loop playsinline>
+
+            <source src="../../Assets/videos/inkora.mp4" type="video/mp4" />
+
+        </video>
+
+    </div>
+
+
+    <div class="login-overlay"></div>
+
+
+
+
+    <main class="login-page">
+
+
+
+
+        <section class="brand-panel">
+
+
+            <div class="technical-label">
+
+                <span class="technical-line"></span>
+
+                <span>
+                    INKORA CREATIVE SYSTEM
+                </span>
+
+            </div>
+
+
+            <div class="brand-logo">
+
+                <img src="../../Assets/img/logo-inkora.png" alt="Papelería INKORA" />
+
+            </div>
+
+
+            <div class="brand-line"></div>
+
+
+            <div class="brand-content">
+
+                <h2>
+
+                    Crea<span>.</span><br />
+
+                    Imprime<span>.</span><br />
+
+                    Inspira<span>.</span>
+
+                </h2>
+
+
+                <p>
+
+                    𝐷𝑜𝑛𝑑𝑒 𝑡𝑢𝑠 𝑖𝑑𝑒𝑎𝑠 𝑡𝑜𝑚𝑎𝑛 𝑓𝑜𝑟𝑚𝑎 𝑦 𝑐𝑎𝑑𝑎 𝑑𝑒𝑡𝑎𝑙𝑙𝑒
+                    𝑠𝑒 𝑐𝑜𝑛𝑣𝑖𝑒𝑟𝑡𝑒 𝑒𝑛 𝑢𝑛𝑎 𝑛𝑢𝑒𝑣𝑎 𝑜𝑝𝑜𝑟𝑡𝑢𝑛𝑖𝑑𝑎𝑑.
+
+                </p>
+
+            </div>
+
+
+            <div class="brand-status">
+
+                <span class="status-light"></span>
+
+                SISTEMA OPERATIVO
+
+            </div>
+
+
+        </section>
+
+
+
+
+        <section class="login-form-area">
+
+
+            <div class="login-card">
+
+
+
+
+                <div class="access-header">
+
+                    <div class="access-code">
+
+                        <span class="access-dot"></span>
+
+                        SECURE ACCESS
+
+                    </div>
+
+                    <span class="access-version">
+                        INKORA / 01
+                    </span>
+
+                </div>
+
+
+                <div class="login-header">
+
+
+                    <h1>
+                        Inicia sesión
+                    </h1>
+
+                    <p>
+                        Ingresa tus credenciales para acceder
+                        a tu cuenta INKORA.
+                    </p>
+
+                </div>
+
+
+
+
+                <form id="loginForm" action="#" method="post" onsubmit="return false;">
+
+
+
+                    <div class="form-group">
+
+
+                        <label for="Correo">
+
+                            <span style="color:#dceaf3;">
+                                Correo electrónico
+                            </span>
+
+                            <span>
+                                REQUERIDO
+                            </span>
+
+                        </label>
+
+
+                        <div class="input-wrapper">
+
+
+                            <div class="input-icon-box">
+
+                                <i class="bi bi-envelope"></i>
+
+                            </div>
+
+
+                            <div class="input-content">
+
+                                <input id="Correo" name="Correo" class="inkora-input" type="email" autocomplete="email"
+                                    placeholder="nombre@correo.com" />
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+
+                    <div class="form-group">
+
+
+                        <div class="password-label-row">
+
+
+                            <label for="loginPassword">
+
+                                <span style="color:#dceaf3;">
+                                    Contraseña
+                                </span>
+
+                                <span>
+                                    REQUERIDO
+                                </span>
+
+                            </label>
+
+
+                        </div>
+
+
+                        <div class="input-wrapper">
+
+
+                            <div class="input-icon-box">
+
+                                <i class="bi bi-shield-lock"></i>
+
+                            </div>
+
+
+                            <div class="input-content">
+
+                                <input name="Contrasena" class="inkora-input" type="password" id="loginPassword"
+                                    autocomplete="current-password" placeholder="Ingresa tu contraseña" />
+
+                            </div>
+
+
+                            <button type="button" id="togglePassword" class="password-button"
+                                aria-label="Mostrar contraseña">
+
+                                <i class="bi bi-eye" id="passwordIcon"></i>
+
+                            </button>
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+
+                    <div class="role-box">
+
+
+                        <label for="roleSelect">
+
+                            <span>
+                                TIPO DE CUENTA
+                            </span>
+
+                            <span>
+                                REQUERIDO
+                            </span>
+
+                        </label>
+
+
+                        <select id="roleSelect" name="IdRol" class="role-select">
+
+
+                            <option value="">
+                                Selecciona tu rol
+                            </option>
+
+
+                            <option value="1">
+                                Administrador
+                            </option>
+
+                            <option value="2">
+                                Proveedor
+                            </option>
+
+                            <option value="3">
+                                Vendedor
+                            </option>
+
+                            <option value="4">
+                                Usuario
+                            </option>
+
+
+                        </select>
+
+
+                        <span id="roleHelp" class="role-help">
+
+                            Selecciona el rol con el que fue registrada tu cuenta.
+
+                        </span>
+
+
+                    </div>
+
+
+
+
+                    <div class="login-options">
+
+
+                        <label class="remember-option">
+
+
+                            <input type="checkbox" name="Recordarme" class="remember-checkbox" />
+
+
+                            <span class="custom-check">
+
+                                <i class="bi bi-check"></i>
+
+                            </span>
+
+
+                            <span class="remember-text">
+
+                                Recordarme
+
+                            </span>
+
+
+                        </label>
+
+
+                        <a href="#" class="forgot-password">
+
+                            ¿Recuperar contraseña?
+
+                        </a>
+
+
+                    </div>
+
+
+
+
+                    <button type="submit" class="login-submit">
+
+
+                        <span class="button-icon">
+
+                            <i class="bi bi-box-arrow-in-right"></i>
+
+                        </span>
+
+
+                        <span class="button-text">
+
+                            Iniciar sesión
+
+                        </span>
+
+
+                        <span class="button-arrow">
+
+                            <i class="bi bi-arrow-right"></i>
+
+                        </span>
+
+
+                    </button>
+
+
+                </form>
+
+
+
+
+                <div class="register-link">
+
+
+                    <span>
+
+                        ¿Aún no tienes una cuenta?
+
+                    </span>
+
+
+                    <a href="#">
+
+                        Crear cuenta
+
+                        <i class="bi bi-arrow-up-right"></i>
+
+                    </a>
+
+
+                </div>
+
+
+
+
+                <a href="#" class="back-home">
+
+                    <i class="bi bi-arrow-left"></i>
+
+                    Volver al inicio
+
+                </a>
+
+
+
+
+
+        </section>
+
+
+    </main>
+
+
+    =========================================================
+    JAVASCRIPT DEL FORMULARIO
+    ========================================================= -->
+
+    <script>
+
+
+        /* =====================================================
+           MOSTRAR / OCULTAR CONTRASEÑA
+           ===================================================== */
+
+        const password =
+            document.getElementById("loginPassword");
+
+
+        const toggle =
+            document.getElementById("togglePassword");
+
+
+        const icon =
+            document.getElementById("passwordIcon");
+
+
+        if (toggle && password && icon) {
+
+
+            toggle.addEventListener("click", function () {
+
+
+                if (password.type === "password") {
+
+
+                    password.type = "text";
+
+
+                    icon.classList.remove("bi-eye");
+
+                    icon.classList.add("bi-eye-slash");
+
+
+                    toggle.setAttribute(
+                        "aria-label",
+                        "Ocultar contraseña"
+                    );
+
+
+                }
+
+                else {
+
+
+                    password.type = "password";
+
+
+                    icon.classList.remove("bi-eye-slash");
+
+                    icon.classList.add("bi-eye");
+
+
+                    toggle.setAttribute(
+                        "aria-label",
+                        "Mostrar contraseña"
+                    );
+
+
+                }
+
+
+            });
+
+        }
+
+
+
+
+        const roleSelect =
+            document.getElementById("roleSelect");
+
+
+        const roleHelp =
+            document.getElementById("roleHelp");
+
+
+        if (roleSelect && roleHelp) {
+
+
+            roleSelect.addEventListener(
+                "change",
+                function () {
+
+
+                    const selected =
+                        roleSelect.options[
+                        roleSelect.selectedIndex
+                        ];
+
+
+                    const role =
+                        selected
+                            ? selected.text.trim().toLowerCase()
+                            : "";
+
+
+                    if (role === "proveedor") {
+
+
+                        roleHelp.textContent =
+                            "Accederás al dashboard correspondiente a tu proveedor.";
+
+
+                    }
+
+                    else if (role === "administrador") {
+
+
+                        roleHelp.textContent =
+                            "Accederás al panel administrativo de INKORA.";
+
+
+                    }
+
+                    else if (role === "vendedor") {
+
+
+                        roleHelp.textContent =
+                            "Accederás al área de gestión de ventas.";
+
+
+                    }
+
+                    else if (
+                        role === "usuario" ||
+                        role === "cliente"
+                    ) {
+
+
+                        roleHelp.textContent =
+                            "Accederás al área principal de INKORA.";
+
+
+                    }
+
+                    else {
+
+
+                        roleHelp.textContent =
+                            "Selecciona el rol con el que fue registrada tu cuenta.";
+
+                    }
+
+
+                }
+            );
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
