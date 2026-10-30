@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>
+        Panel de administración - INKORA
+    </title>
+
+
+    <link rel="stylesheet" href="../../Assets/css/bootstrap.min.css" />
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+
+    <link rel="stylesheet" href="../../Assets/css/dashboard-admin.css" />
+
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" />
+
+
+    <link rel="stylesheet" href="../../Assets/css/inkora-brand.css" />
+
+</head>
+
+
+<body>
+
+    <div class="admin-shell">
+
+
+        <!-- ===================================================== -->
+        <!-- SIDEBAR -->
+        <!-- ===================================================== -->
+
+        <aside class="admin-sidebar">
+
+
+            <!-- LOGO -->
+
+            <div class="sidebar-logo-area">
+
+                <img src="../../Assets/img/logo-inkora.png" alt="INKORA" class="admin-logo" />
+
+            </div>
+
+
+            <!-- PERFIL ADMIN -->
+
+            <a href="#" class="admin-mini-profile">
+
+                <div class="mini-avatar">
+
+                    <i class="bi bi-person-fill"></i>
+
+                </div>
+
+
+                <div class="mini-profile-info">
+
+                    <strong>
+                        Administrador
+                    </strong>
+
+                    <span>
+                        Rol: Administrador
+                    </span>
+
+                </div>
+
+
+                <i class="bi bi-chevron-right"></i>
+
+            </a>
+
+
+            <!-- MENU -->
+
+            <nav class="admin-menu">
+
+
+                <a href="#" class="admin-menu-item active">
+
+                    <i class="bi bi-grid-1x2-fill"></i>
+
+                    <span>
+                        Resumen
+                    </span>
+
+                </a>
+
+
+                <a href="#" class="admin-menu-item">
+
+                    <i class="bi bi-clipboard2-data-fill"></i>
+
+                    <span>
+                        Inventario
+                    </span>
+
+                </a>
+
+
+                <a href="#" class="admin-menu-item">
+
+                    <i class="bi bi-box-seam-fill"></i>
+
+                    <span>
+                        Productos
+                    </span>
+
+                </a>
+
+
+                <a href="#" class="admin-menu-item">
+
+                    <i class="bi bi-truck-front-fill"></i>
+
+                    <span>
+                        Proveedores
+                    </span>
+
+                </a>
+
+
+                <a href="#" class="admin-menu-item">
+
+                    <i class="bi bi-person-badge-fill"></i>
+
+                    <span>
+                        Vendedores
+                    </span>
+
+                </a>
+
+
+                <a href="#" class="admin-menu-item">
+
+                    <i class="bi bi-bar-chart-fill"></i>
+
+                    <span>
+                        Ventas
+                    </span>
+
+                </a>
+
+
+                <a href="#" class="admin-menu-item">
+
+                    <i class="bi bi-people-fill"></i>
+
+                    <span>
+                        Usuarios
+                    </span>
+
+                </a>
+
+
+                <a href="#" class="admin-menu-item">
+
+                    <i class="bi bi-arrow-repeat"></i>
+
+                    <span>
+                        Solicitudes
+                    </span>
+
+                </a>
+
+
+                <a href="#" class="admin-menu-item">
+
+                    <i class="bi bi-person-plus-fill"></i>
+
+                    <span>
+                        Crear cuenta
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+            <!-- PARTE INFERIOR -->
+
+            <div class="sidebar-footer">
+
+                <div class="sidebar-slogan">
+
+                    <strong>
+                        Más que papelería,
+                    </strong>
+
+                    <span>
+                        somos inspiración
+                    </span>
+
+                    <div class="slogan-line"></div>
+
+                </div>
+
+
+                <button type="button" class="sidebar-logout">
+
+                    <i class="bi bi-box-arrow-right"></i>
+
+                    <span>
+                        Cerrar sesión
+                    </span>
+
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ===================================================== -->
+        <!-- MAIN -->
+        <!-- ===================================================== -->
+
+        <main class="admin-main">
+
+
+            <!-- TOPBAR -->
+
+            <header class="admin-topbar">
+
+
+                <div class="admin-search">
+
+                    <i class="bi bi-search"></i>
+
+                    <input id="adminSearch" type="search" placeholder="Buscar productos, proveedores, usuarios..." />
+
+                </div>
+
+
+                <div class="topbar-right">
+
+
+                    <a href="#" class="notification-icon">
+
+                        <i class="bi bi-bell-fill"></i>
+
+                    </a>
+
+
+                    <div class="topbar-separator"></div>
+
+
+                    <a href="#" class="top-profile">
+
+                        <div class="top-avatar">
+
+                            <i class="bi bi-person-fill"></i>
+
+                        </div>
+
+
+                        <div class="top-profile-text">
+
+                            <strong>
+                                Administrador
+                            </strong>
+
+                            <small>
+                                Rol: Administrador
+                            </small>
+
+                        </div>
+
+
+                        <i class="bi bi-chevron-down"></i>
+
+                    </a>
+
+                </div>
+
+            </header>
+
+
+            <!-- CONTENIDO -->
+
+            <section class="admin-page-content">
+
+
+                <!-- ========================================================= -->
+                <!-- ENCABEZADO -->
+                <!-- ========================================================= -->
+
+                <div class="dashboard-header">
+
+                    <div class="dashboard-welcome">
+
+                        <span class="eyebrow">
+                            SISTEMA DE GESTIÓN INKORA
+                        </span>
+
+                        <h1>
+                            Bienvenido de <span class="welcome-accent">nuevo!</span>
+                        </h1>
+
+                        <span class="welcome-sub">
+                            Panel Administrador
+                        </span>
+
+                    </div>
+
+                    <div class="dashboard-banner">
+
+                        <img src="../../Assets/img/inkora-hero-premium.png" alt="INKORA" />
+
+                    </div>
+
+                </div>
+
+
+                <!-- ========================================================= -->
+                <!-- TARJETAS -->
+                <!-- ========================================================= -->
+
+                <div class="dashboard-stats">
+
+
+                    <a href="#" class="dashboard-stat-card">
+
+                        <div class="dashboard-stat-icon">
+
+                            <i class="bi bi-box-seam-fill"></i>
+
+                        </div>
+
+                        <div class="dashboard-stat-content">
+
+                            <span>
+                                Productos Registrados
+                            </span>
+
+                            <strong>
+                                24
+                            </strong>
+
+                            <small>
+                                Inventario registrado
+                            </small>
+
+                        </div>
+
+                        <i class="bi bi-arrow-up-right stat-arrow"></i>
+
+                    </a>
+
+
+                    <a href="#" class="dashboard-stat-card">
+
+                        <div class="dashboard-stat-icon">
+
+                            <i class="bi bi-people-fill"></i>
+
+                        </div>
+
+                        <div class="dashboard-stat-content">
+
+                            <span>
+                                Usuarios
+                            </span>
+
+                            <strong>
+                                18
+                            </strong>
+
+                            <small>
+                                Clientes registrados
+                            </small>
+
+                        </div>
+
+                        <i class="bi bi-arrow-up-right stat-arrow"></i>
+
+                    </a>
+
+
+                    <a href="#" class="dashboard-stat-card">
+
+                        <div class="dashboard-stat-icon">
+
+                            <i class="bi bi-truck-front-fill"></i>
+
+                        </div>
+
+                        <div class="dashboard-stat-content">
+
+                            <span>
+                                Proveedores
+                            </span>
+
+                            <strong>
+                                6
+                            </strong>
+
+                            <small>
+                                Proveedores activos
+                            </small>
+
+                        </div>
+
+                        <i class="bi bi-arrow-up-right stat-arrow"></i>
+
+                    </a>
+
+
+                    <a href="#" class="dashboard-stat-card">
+
+                        <div class="dashboard-stat-icon">
+
+                            <i class="bi bi-person-badge-fill"></i>
+
+                        </div>
+
+                        <div class="dashboard-stat-content">
+
+                            <span>
+                                Vendedores
+                            </span>
+
+                            <strong>
+                                4
+                            </strong>
+
+                            <small>
+                                Personal registrado
+                            </small>
+
+                        </div>
+
+                        <i class="bi bi-arrow-up-right stat-arrow"></i>
+
+                    </a>
+
+                </div>
+
+
+                <!-- ========================================================= -->
+                <!-- MOVIMIENTOS RECIENTES -->
+                <!-- ========================================================= -->
+
+                <div class="admin-card dashboard-movimientos">
+
+
+                    <div class="card-header-admin">
+
+                        <div>
+
+                            <h2>
+                                Movimientos Recientes
+                            </h2>
+
+                            <p>
+                                Últimos movimientos de dinero registrados.
+                            </p>
+
+                        </div>
+
+                        <div class="header-icon">
+
+                            <i class="bi bi-cash-stack"></i>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="table-container">
+
+                        <table class="admin-table">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        ID Movimiento
+                                    </th>
+
+                                    <th>
+                                        Fecha
+                                    </th>
+
+                                    <th>
+                                        Tipo
+                                    </th>
+
+                                    <th>
+                                        Concepto
+                                    </th>
+
+                                    <th>
+                                        Monto (COP)
+                                    </th>
+
+                                    <th>
+                                        Descripción
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody>
+
+                                <tr>
+
+                                    <td colspan="6" class="empty-table">
+
+                                        <i class="bi bi-cash-coin"></i>
+
+                                        <strong>
+                                            No hay movimientos registrados.
+                                        </strong>
+
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ========================================================= -->
+                <!-- CUERPO -->
+                <!-- ========================================================= -->
+
+                <div class="dashboard-columns">
+
+
+                    <!-- PRODUCTOS -->
+
+                    <div class="admin-card">
+
+
+                        <div class="card-header-admin">
+
+                            <div>
+
+                                <h2>
+                                    Productos recientes
+                                </h2>
+
+                                <p>
+                                    Últimos productos registrados.
+                                </p>
+
+                            </div>
+
+
+                            <a href="#" class="view-all">
+
+                                Ver todos
+
+                                <i class="bi bi-arrow-right"></i>
+
+                            </a>
+
+                        </div>
+
+
+                        <div class="recent-products">
+
+                            <div class="empty-dashboard">
+
+                                <i class="bi bi-box"></i>
+
+                                <strong>
+                                    No hay productos registrados.
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- STOCK CRÍTICO -->
+
+                    <div class="admin-card">
+
+
+                        <div class="card-header-admin">
+
+                            <div>
+
+                                <h2>
+                                    Stock crítico
+                                </h2>
+
+                                <p>
+                                    Productos que necesitan atención.
+                                </p>
+
+                            </div>
+
+
+                            <a href="#" class="view-all">
+
+                                Ver todos
+
+                                <i class="bi bi-arrow-right"></i>
+
+                            </a>
+
+                        </div>
+
+
+                        <div class="critical-list">
+
+                            <div class="empty-dashboard">
+
+                                <i class="bi bi-check-circle"></i>
+
+                                <strong>
+                                    Todo está en orden.
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ========================================================= -->
+                <!-- ACCESOS -->
+                <!-- ========================================================= -->
+
+                <div class="admin-card quick-access-card">
+
+
+                    <div class="card-header-admin">
+
+                        <div>
+
+                            <h2>
+                                Accesos rápidos
+                            </h2>
+
+                            <p>
+                                Entra directamente a cada módulo.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="quick-access-grid">
+
+
+                        <a href="#" class="quick-access-item">
+
+                            <div>
+                                <i class="bi bi-plus-square-fill"></i>
+                            </div>
+
+                            <span>
+                                Registrar producto
+                            </span>
+
+                        </a>
+
+
+                        <a href="#" class="quick-access-item">
+
+                            <div>
+                                <i class="bi bi-box-seam-fill"></i>
+                            </div>
+
+                            <span>
+                                Gestionar inventario
+                            </span>
+
+                        </a>
+
+
+                        <a href="#" class="quick-access-item">
+
+                            <div>
+                                <i class="bi bi-bar-chart-fill"></i>
+                            </div>
+
+                            <span>
+                                Ver ventas
+                            </span>
+
+                        </a>
+
+
+                        <a href="#" class="quick-access-item">
+
+                            <div>
+                                <i class="bi bi-people-fill"></i>
+                            </div>
+
+                            <span>
+                                Gestionar usuarios
+                            </span>
+
+                        </a>
+
+
+                        <a href="#" class="quick-access-item">
+
+                            <div>
+                                <i class="bi bi-truck-front-fill"></i>
+                            </div>
+
+                            <span>
+                                Gestionar proveedores
+                            </span>
+
+                        </a>
+
+
+                        <a href="#" class="quick-access-item">
+
+                            <div>
+                                <i class="bi bi-person-badge-fill"></i>
+                            </div>
+
+                            <span>
+                                Gestionar vendedores
+                            </span>
+
+                        </a>
+
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                const search =
+                    document.getElementById("adminSearch");
+
+                if (!search)
+                    return;
+
+
+                search.addEventListener(
+                    "input",
+                    function () {
+
+                        const value =
+                            this.value
+                                .toLowerCase()
+                                .trim();
+
+
+                        document
+                            .querySelectorAll(
+                                ".searchable-item")
+                            .forEach(function (element) {
+
+                                const text =
+                                    element.textContent
+                                        .toLowerCase();
+
+
+                                element.style.display =
+                                    !value ||
+                                        text.includes(value)
+                                        ? ""
+                                        : "none";
+
+                            });
+
+                    });
+
+            });
+
+    </script>
+
+
+</body>
+
+</html>
