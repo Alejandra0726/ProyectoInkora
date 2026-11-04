@@ -1,0 +1,719 @@
+/* ============================================================
+   INKORA · Sistema de Marca Unificado
+   Tipografía: Sora (títulos) + Inter (texto)
+   Paleta: azul marino corporativo · azul eléctrico · cielos
+   ============================================================ */
+
+:root
+{
+    --ink-navy: #031d38;
+    --ink-navy-2: #06284a;
+    --ink-navy-3: #0a3363;
+    --ink-blue: #2f7de1;
+    --ink-sky: #8fb8e8;
+    --ink-ink: #10192b;
+    --ink-muted: #5b6b82;
+    --ink-line: #e3e9f2;
+    --ink-surface: #f5f8fc;
+    --ink-radius: 16px;
+    --ink-shadow: 0 12px 32px rgba(3, 29, 56, .10);
+    --ink-shadow-soft: 0 4px 14px rgba(3, 29, 56, .06);
+}
+
+
+/* ============================================================
+   DETALLES GLOBALES
+   ============================================================ */
+
+::selection
+{
+    background: var(--ink-blue);
+    color: #ffffff;
+}
+
+*
+{
+    scrollbar-width: thin;
+    scrollbar-color: rgba(3, 29, 56, .30) transparent;
+}
+
+    ::-webkit-scrollbar
+    {
+        width: 9px;
+        height: 9px;
+    }
+
+    ::-webkit-scrollbar-thumb
+    {
+        background: rgba(3, 29, 56, .26);
+        border-radius: 99px;
+    }
+
+        ::-webkit-scrollbar-thumb:hover
+        {
+            background: rgba(3, 29, 56, .45);
+        }
+
+    ::-webkit-scrollbar-track
+    {
+        background: transparent;
+    }
+
+:focus-visible
+{
+    outline: 2px solid var(--ink-blue);
+    outline-offset: 2px;
+}
+
+
+/* ============================================================
+   TIPOGRAFÍA DE MARCA (títulos en Sora, en todos los roles)
+   ============================================================ */
+
+.admin-shell h1, .admin-shell h2, .admin-shell h3, .admin-shell h4,
+.vendor-shell h1, .vendor-shell h2, .vendor-shell h3,
+.usuario-shell h1, .usuario-shell h2, .usuario-shell h3,
+.supplier-app h1, .supplier-app h2, .supplier-app h3,
+.page h1, .page h2, .page h3,
+.create-page h1, .create-page h2, .create-page h3
+{
+    font-family: 'Sora', 'Inter', 'Segoe UI', sans-serif;
+    letter-spacing: -.015em;
+}
+
+.admin-shell .dashboard-kicker,
+.vendor-shell .vendor-kicker,
+.supplier-app .brand-block p
+{
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.admin-shell .dashboard-kicker,
+.vendor-shell .vendor-kicker
+{
+    color: var(--ink-blue);
+    font-size: 11px;
+}
+
+
+/* ============================================================
+   ADMINISTRADOR
+   ============================================================ */
+
+.admin-shell .admin-sidebar
+{
+    background: linear-gradient(175deg, var(--ink-navy) 0%, var(--ink-navy-2) 68%, #083057 100%);
+}
+
+.admin-shell .admin-menu-item
+{
+    border-radius: 12px;
+    transition: background .2s ease, transform .2s ease;
+}
+
+    .admin-shell .admin-menu-item:hover
+    {
+        background: rgba(255, 255, 255, .08);
+        transform: translateX(2px);
+    }
+
+    .admin-shell .admin-menu-item.active
+    {
+        background: linear-gradient(90deg, rgba(47, 125, 225, .30), rgba(47, 125, 225, .08));
+        box-shadow: inset 3px 0 0 var(--ink-sky);
+    }
+
+.admin-shell .admin-topbar
+{
+    background: rgba(255, 255, 255, .88);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--ink-line);
+}
+
+.admin-shell,
+.admin-shell .admin-main
+{
+    background: linear-gradient(180deg, #f7fafd 0%, #eef3fa 100%);
+}
+
+.admin-shell .admin-card,
+.admin-shell .admin-form-card,
+.admin-shell .dashboard-stat-card
+{
+    border-radius: var(--ink-radius);
+    border: 1px solid var(--ink-line);
+    box-shadow: var(--ink-shadow-soft);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.admin-shell .dashboard-stat-card:hover,
+.admin-shell .admin-card:hover
+{
+    transform: translateY(-3px);
+    box-shadow: var(--ink-shadow);
+}
+
+.admin-shell .admin-table thead th
+{
+    background: var(--ink-navy);
+    color: #ffffff;
+    font-family: 'Sora', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+}
+
+.admin-shell .admin-table tbody tr:nth-child(even)
+{
+    background: #f8fbfe;
+}
+
+.admin-shell .admin-table tbody tr:hover
+{
+    background: #eef4fc;
+}
+
+
+/* ============================================================
+   VENDEDOR
+   ============================================================ */
+
+.vendor-shell .vendor-sidebar
+{
+    background: linear-gradient(175deg, var(--ink-navy) 0%, var(--ink-navy-2) 68%, #083057 100%);
+}
+
+.vendor-shell .vendor-menu-item
+{
+    border-radius: 12px;
+    transition: background .2s ease, transform .2s ease;
+}
+
+    .vendor-shell .vendor-menu-item:hover
+    {
+        background: rgba(255, 255, 255, .08);
+        transform: translateX(2px);
+    }
+
+    .vendor-shell .vendor-menu-item.active
+    {
+        background: linear-gradient(90deg, rgba(47, 125, 225, .30), rgba(47, 125, 225, .08));
+        box-shadow: inset 3px 0 0 var(--ink-sky);
+    }
+
+.vendor-shell .vendor-topbar
+{
+    background: rgba(255, 255, 255, .88);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--ink-line);
+}
+
+.vendor-shell,
+.vendor-shell .vendor-main
+{
+    background: linear-gradient(180deg, #f7fafd 0%, #eef3fa 100%);
+}
+
+.vendor-shell .panel-card,
+.vendor-shell .right-panel-card,
+.vendor-shell .stat-card
+{
+    border-radius: var(--ink-radius);
+    border: 1px solid var(--ink-line);
+    box-shadow: var(--ink-shadow-soft);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.vendor-shell .stat-card:hover,
+.vendor-shell .panel-card:hover
+{
+    transform: translateY(-3px);
+    box-shadow: var(--ink-shadow);
+}
+
+.vendor-shell .vendor-table thead th
+{
+    background: var(--ink-navy);
+    color: #ffffff;
+    font-family: 'Sora', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+}
+
+.vendor-shell .vendor-table tbody tr:nth-child(even)
+{
+    background: #f8fbfe;
+}
+
+.vendor-shell .vendor-table tbody tr:hover
+{
+    background: #eef4fc;
+}
+
+.vendor-shell .btn-primario
+{
+    background: linear-gradient(135deg, var(--ink-navy-2) 0%, var(--ink-blue) 100%);
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(47, 125, 225, .30);
+    transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+}
+
+    .vendor-shell .btn-primario:hover
+    {
+        transform: translateY(-2px);
+        filter: brightness(1.06);
+        box-shadow: 0 10px 22px rgba(47, 125, 225, .38);
+    }
+
+
+/* ============================================================
+   CLIENTE (interfaz oscura: pulido sobre su propio tema)
+   ============================================================ */
+
+.usuario-shell .panel-card,
+.usuario-shell .stat-card,
+.usuario-shell .producto-card,
+.usuario-shell .tabla-panel,
+.usuario-shell .perfil-card
+{
+    border-radius: 18px;
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.usuario-shell .stat-card:hover,
+.usuario-shell .producto-card:hover
+{
+    transform: translateY(-4px);
+    box-shadow:
+        0 18px 40px rgba(3, 29, 56, .16),
+        0 0 22px rgba(47, 125, 225, .16);
+}
+
+.usuario-shell .tabla-panel thead th
+{
+    font-family: 'Sora', sans-serif;
+    font-size: 11px;
+    letter-spacing: .10em;
+    text-transform: uppercase;
+    color: var(--ink-navy-2);
+}
+
+.usuario-shell .usuario-sidebar a,
+.usuario-shell .sidebar-logout
+{
+    transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+
+.usuario-shell .usuario-sidebar a:hover
+{
+    transform: translateX(2px);
+}
+
+
+/* ============================================================
+   PROVEEDOR
+   ============================================================ */
+
+.supplier-app .sidebar
+{
+    background: linear-gradient(175deg, var(--ink-navy) 0%, var(--ink-navy-2) 68%, #083057 100%);
+}
+
+.supplier-app .brand-block p
+{
+    color: var(--ink-sky);
+    font-size: 10px;
+}
+
+.supplier-app .nav-menu a
+{
+    border-radius: 12px;
+    transition: background .2s ease, transform .2s ease;
+}
+
+    .supplier-app .nav-menu a:hover
+    {
+        background: rgba(255, 255, 255, .08);
+        transform: translateX(2px);
+    }
+
+    .supplier-app .nav-menu a.active
+    {
+        background: linear-gradient(90deg, rgba(47, 125, 225, .30), rgba(47, 125, 225, .08));
+        box-shadow: inset 3px 0 0 var(--ink-sky);
+    }
+
+.supplier-app .topbar
+{
+    background: rgba(255, 255, 255, .88);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--ink-line);
+}
+
+.supplier-app,
+.supplier-app .workspace-grid
+{
+    background: linear-gradient(180deg, #f7fafd 0%, #eef3fa 100%);
+}
+
+.supplier-app .kores-table thead th
+{
+    background: var(--ink-navy);
+    color: #ffffff;
+    font-family: 'Sora', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+}
+
+/* Páginas internas del proveedor (Stock, Precios, Solicitudes...) */
+
+.page .card
+{
+    border-radius: 18px;
+    border: 1px solid var(--ink-line);
+    box-shadow: var(--ink-shadow-soft);
+}
+
+.page .table thead th
+{
+    background: var(--ink-navy);
+    color: #ffffff;
+    font-family: 'Sora', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+}
+
+.page .table tbody tr:hover
+{
+    background: #eef4fc;
+}
+
+.page .request-button,
+.page .save
+{
+    background: linear-gradient(135deg, var(--ink-navy-2) 0%, var(--ink-blue) 100%);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 6px 16px rgba(47, 125, 225, .25);
+    transition: transform .2s ease, filter .2s ease;
+}
+
+    .page .request-button:hover,
+    .page .save:hover
+    {
+        transform: translateY(-2px);
+        filter: brightness(1.06);
+    }
+
+/* Formulario de nuevo producto (proveedor) */
+
+.create-page .form-card
+{
+    border-radius: 18px;
+    border: 1px solid var(--ink-line);
+    box-shadow: var(--ink-shadow-soft);
+    background: #ffffff;
+}
+
+
+/* ============================================================
+   EFECTOS PREMIUM · ADMIN + VENDEDOR + CLIENTE
+   (El proveedor conserva su diseño Kores original)
+   ============================================================ */
+
+@keyframes inkora-float
+{
+    0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+    50%      { transform: translate3d(0, -14px, 0) scale(1.03); }
+}
+
+@keyframes inkora-pulse-glow
+{
+    0%, 100% { box-shadow: 0 0 0 0 rgba(47, 125, 225, .45); }
+    70%      { box-shadow: 0 0 0 12px rgba(47, 125, 225, 0); }
+}
+
+@keyframes inkora-shimmer
+{
+    from { transform: translateX(-120%) skewX(-18deg); }
+    to   { transform: translateX(240%)  skewX(-18deg); }
+}
+
+
+/* ---------- Fondo ambiental (superficie con brillos suaves) ---------- */
+
+.admin-shell,
+.vendor-shell
+{
+    background:
+        radial-gradient(720px 340px at 8% -4%, rgba(47, 125, 225, .10), transparent 62%),
+        radial-gradient(820px 400px at 96% 4%, rgba(143, 184, 232, .16), transparent 60%),
+        radial-gradient(700px 520px at 50% 108%, rgba(3, 29, 56, .06), transparent 65%),
+        linear-gradient(180deg, #f7fafd 0%, #eef3fa 100%);
+    background-attachment: fixed;
+}
+
+.usuario-shell
+{
+    background:
+        radial-gradient(720px 340px at 8% -4%, rgba(47, 125, 225, .10), transparent 62%),
+        radial-gradient(820px 400px at 96% 4%, rgba(143, 184, 232, .18), transparent 60%),
+        radial-gradient(700px 520px at 50% 108%, rgba(3, 29, 56, .05), transparent 65%),
+        linear-gradient(180deg, #f6f8fc 0%, #eef3fa 100%) !important;
+    background-attachment: fixed !important;
+}
+
+
+/* ---------- Tarjetas con anillo de brillo al pasar el mouse ---------- */
+
+.admin-shell .admin-card,
+.admin-shell .admin-form-card,
+.admin-shell .dashboard-stat-card,
+.vendor-shell .panel-card,
+.vendor-shell .right-panel-card,
+.vendor-shell .stat-card,
+.vendor-shell .vendor-producto-card,
+.usuario-shell .panel-card,
+.usuario-shell .stat-card,
+.usuario-shell .tabla-panel,
+.usuario-shell .perfil-card
+{
+    position: relative;
+    will-change: transform;
+}
+
+.admin-shell .admin-card:hover,
+.admin-shell .admin-form-card:hover,
+.admin-shell .dashboard-stat-card:hover,
+.vendor-shell .panel-card:hover,
+.vendor-shell .right-panel-card:hover,
+.vendor-shell .stat-card:hover,
+.vendor-shell .vendor-producto-card:hover
+{
+    transform: translateY(-5px) scale(1.008);
+    box-shadow:
+        0 18px 40px rgba(3, 29, 56, .16),
+        0 0 0 1px rgba(47, 125, 225, .28),
+        0 0 26px rgba(47, 125, 225, .18);
+    border-color: rgba(47, 125, 225, .45);
+}
+
+.usuario-shell .panel-card:hover,
+.usuario-shell .stat-card:hover,
+.usuario-shell .tabla-panel:hover,
+.usuario-shell .perfil-card:hover
+{
+    transform: translateY(-4px);
+    box-shadow:
+        0 18px 42px rgba(3, 29, 56, .15),
+        0 0 0 1px rgba(47, 125, 225, .30),
+        0 0 24px rgba(47, 125, 225, .16);
+    border-color: rgba(47, 125, 225, .45) !important;
+}
+
+
+/* ---------- Acento superior degradado en tarjetas de estadísticas ---------- */
+
+.admin-shell .dashboard-stat-card::before,
+.vendor-shell .stat-card::before,
+.usuario-shell .stat-card::before
+{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    border-radius: 99px;
+    background: linear-gradient(90deg, var(--ink-navy-2), var(--ink-blue) 55%, var(--ink-sky));
+    opacity: .85;
+    pointer-events: none;
+}
+
+.usuario-shell .stat-card::before
+{
+    background: linear-gradient(90deg, var(--ink-blue), var(--ink-sky));
+}
+
+
+/* ---------- Íconos de estadísticas con halo ---------- */
+
+.admin-shell .dashboard-stat-icon,
+.admin-shell .stat-icon,
+.vendor-shell .stat-icon
+{
+    transition: transform .25s ease, box-shadow .25s ease, filter .25s ease;
+}
+
+.admin-shell .dashboard-stat-card:hover .dashboard-stat-icon,
+.admin-shell .stat-card:hover .stat-icon,
+.vendor-shell .stat-card:hover .stat-icon
+{
+    transform: scale(1.10) rotate(-3deg);
+    filter: brightness(1.12);
+    box-shadow: 0 12px 28px rgba(47, 125, 225, .45);
+}
+
+
+/* ---------- Botones con destello (shimmer) ---------- */
+
+.admin-shell .admin-card .btn-primary,
+.vendor-shell .btn-primario,
+.usuario-shell .btn-checkout,
+.usuario-shell .btn-primario
+{
+    position: relative;
+    overflow: hidden;
+}
+
+.admin-shell .admin-card .btn-primary::after,
+.vendor-shell .btn-primario::after,
+.usuario-shell .btn-checkout::after,
+.usuario-shell .btn-primario::after
+{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 34%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .38), transparent);
+    transform: translateX(-140%) skewX(-18deg);
+    pointer-events: none;
+}
+
+.admin-shell .admin-card .btn-primary:hover::after,
+.vendor-shell .btn-primario:hover::after,
+.usuario-shell .btn-checkout:hover::after,
+.usuario-shell .btn-primario:hover::after
+{
+    animation: inkora-shimmer .7s ease;
+}
+
+
+/* ---------- Badges y píldoras con presencia ---------- */
+
+.usuario-shell .oferta-badge,
+.usuario-shell .badge-descuento
+{
+    box-shadow: 0 6px 16px rgba(47, 125, 225, .40);
+    animation: inkora-pulse-glow 2.6s ease-in-out infinite;
+}
+
+.admin-shell .status-pill,
+.vendor-shell .vendor-stock-badge,
+.vendor-shell .badge-pendientes
+{
+    font-weight: 700;
+    letter-spacing: .02em;
+    box-shadow: 0 4px 12px rgba(3, 29, 56, .14);
+}
+
+
+/* ---------- Tablas: filas con resplandor suave ---------- */
+
+.admin-shell .admin-table tbody tr,
+.vendor-shell .vendor-table tbody tr
+{
+    transition: background .2s ease, box-shadow .2s ease;
+}
+
+.admin-shell .admin-table tbody tr:hover,
+.vendor-shell .vendor-table tbody tr:hover
+{
+    background: #e9f1fc;
+    box-shadow: inset 3px 0 0 var(--ink-blue);
+}
+
+.usuario-shell .tabla-panel tbody tr
+{
+    transition: background .2s ease, box-shadow .2s ease;
+}
+
+.usuario-shell .tabla-panel tbody tr:hover
+{
+    background: rgba(47, 125, 225, .10);
+    box-shadow: inset 3px 0 0 var(--ink-blue);
+}
+
+
+/* ---------- Estados vacíos con icono destacado ---------- */
+
+.admin-shell .empty-state i,
+.vendor-shell .empty-state i
+{
+    color: var(--ink-blue);
+    filter: drop-shadow(0 6px 14px rgba(47, 125, 225, .35));
+}
+
+
+/* ---------- Tarjetas de producto del cliente con brillo ---------- */
+
+.usuario-shell .producto-card
+{
+    border: 1px solid rgba(143, 184, 232, .45);
+    overflow: hidden;
+}
+
+.usuario-shell .producto-card:hover
+{
+    border-color: rgba(47, 125, 225, .60) !important;
+    box-shadow:
+        0 20px 44px rgba(3, 29, 56, .18),
+        0 0 30px rgba(47, 125, 225, .22);
+}
+
+.usuario-shell .producto-card:hover img
+{
+    filter: brightness(1.08) saturate(1.08);
+    transform: scale(1.04);
+    transition: transform .35s ease, filter .35s ease;
+}
+
+.usuario-shell .producto-card img
+{
+    transition: transform .35s ease, filter .35s ease;
+}
+
+
+/* ---------- Respiro y orden (rellenar espacios en blanco) ---------- */
+
+.admin-shell .admin-main,
+.vendor-shell .vendor-main,
+.usuario-shell .usuario-main
+{
+    animation: inkora-enter .45s ease both;
+}
+
+@keyframes inkora-enter
+{
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.admin-shell .stats-grid,
+.vendor-shell .stats-grid
+{
+    gap: 18px;
+}
+
+.admin-shell .admin-card,
+.vendor-shell .panel-card
+{
+    border-radius: 18px;
+}
+
+.usuario-shell .producto-card
+{
+    border-radius: 18px;
+}
