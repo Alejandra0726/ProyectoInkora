@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Crear cuenta | INKORA</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="~/css/register.css" asp-append-version="true" />
+
+</head>
+
+<body>
+
+    <main class="register-page">
+
+        <div class="background-overlay"></div>
+
+        <section class="register-container">
+
+            <header class="register-header">
+
+                <div class="register-topbar">
+
+                    <div class="register-badge">
+                        <span class="register-badge-icon"><i class="bi bi-shield-check"></i></span>
+                        Registro seguro
+                    </div>
+
+                    <div class="register-step">
+                        INKORA / 01
+                    </div>
+
+                </div>
+
+                <div class="register-label">
+                    Bienvenido a INKORA
+                </div>
+
+                <h1 class="register-title">
+                    <span>Crea tu cuenta</span>
+                </h1>
+
+                <p class="register-description">
+                    Regístrate para acceder a nuestros productos, servicios
+                    y beneficios exclusivos.
+                </p>
+
+                <div class="register-progress">
+                    <span class="register-progress-fill"></span>
+                </div>
+
+            </header>
+
+            <div asp-validation-summary="ModelOnly"
+                 class="validation-summary">
+            </div>
+
+            <form asp-controller="Account"
+                  asp-action="Register"
+                  method="post"
+                  enctype="multipart/form-data">
+
+                
+
+                <section class="section">
+
+                    <div class="section-header">
+                        <div class="section-number">1</div>
+                        <div class="section-name">Datos personales</div>
+                        <div class="section-line"></div>
+                    </div>
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label asp-for="Nombre" class="field-label">
+                                <span>Nombre</span>
+                                <span class="required-tag">Requerido</span>
+                            </label>
+
+                            <div class="input-wrapper">
+                                <span class="input-icon"><i class="bi bi-person"></i></span>
+
+                                <input asp-for="Nombre"
+                                       class="form-control has-icon"
+                                       placeholder="Ingresa tu nombre"
+                                       autocomplete="given-name" />
+                            </div>
+
+                            <span asp-validation-for="Nombre" class="field-error"></span>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label asp-for="Apellido" class="field-label">
+                                <span>Apellido</span>
+                                <span class="required-tag">Requerido</span>
+                            </label>
+
+                            <div class="input-wrapper">
+                                <span class="input-icon"><i class="bi bi-person"></i></span>
+
+                                <input asp-for="Apellido"
+                                       class="form-control has-icon"
+                                       placeholder="Ingresa tu apellido"
+                                       autocomplete="family-name" />
+                            </div>
+
+                            <span asp-validation-for="Apellido" class="field-error"></span>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label asp-for="TipoDocumento" class="field-label">
+                                <span>Tipo de documento</span>
+                                <span class="required-tag">Requerido</span>
+                            </label>
+
+                            <select asp-for="TipoDocumento" class="form-control">
+                                <option value="">Selecciona un tipo</option>
+                                <option value="Cédula de Ciudadanía">Cédula de Ciudadanía</option>
+                                <option value="Cédula de Extranjería">Cédula de Extranjería</option>
+                                <option value="Permiso Especial">Permiso Especial</option>
+                            </select>
+
+                            <span asp-validation-for="TipoDocumento" class="field-error"></span>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label asp-for="Documento" class="field-label">
+                                <span>Número de documento</span>
+                                <span class="required-tag">Requerido</span>
+                            </label>
+
+                            <div class="input-wrapper">
+                                <span class="input-icon"><i class="bi bi-person-vcard"></i></span>
+
+                                <input asp-for="Documento"
+                                       class="form-control has-icon"
+                                       placeholder="Número de documento" />
+                            </div>
+
+                            <span asp-validation-for="Documento" class="field-error"></span>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label asp-for="Telefono" class="field-label">
+                                <span>Teléfono</span>
+                                <span class="required-tag">Requerido</span>
+                            </label>
+
+                            <div class="input-wrapper">
+                                <span class="input-icon"><i class="bi bi-telephone"></i></span>
+
+                                <input asp-for="Telefono"
+                                       class="form-control has-icon"
+                                       placeholder="Número de teléfono"
+                                       autocomplete="tel" />
+                            </div>
+
+                            <span asp-validation-for="Telefono" class="field-error"></span>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label asp-for="FechaNacimiento" class="field-label">
+                                <span>Fecha de nacimiento</span>
+                                <span class="required-tag">Requerido</span>
+                            </label>
+
+                            <input asp-for="FechaNacimiento"
+                                   type="date"
+                                   class="form-control" />
+
+                            <span asp-validation-for="FechaNacimiento" class="field-error"></span>
+
+                        </div>
+
+                        <div class="form-group full">
+
+                            <label asp-for="Direccion" class="field-label">
+                                <span>Dirección</span>
+                                <span class="required-tag">Requerido</span>
+                            </label>
+
+                            <div class="input-wrapper">
+                                <span class="input-icon"><i class="bi bi-geo-alt"></i></span>
+
+                                <input asp-for="Direccion"
+                                       class="form-control has-icon"
+                                       placeholder="Ingresa tu dirección"
+                                       autocomplete="street-address" />
+                            </div>
+
+                            <span asp-validation-for="Direccion" class="field-error"></span>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <section class="section">
+
+                    <div class="section-header">
+                        <div class="section-number">2</div>
+                        <div class="section-name">Datos de la cuenta</div>
+                        <div class="section-line"></div>
+                    </div>
+
+                    <div class="form-grid">
+
+                        <div class="form-group full">
+
+                            <label asp-for="Correo" class="field-label">
+                                <span>Correo electrónico</span>
+                                <span class="required-tag">Requerido</span>
+                            </label>
+
+                            <div class="input-wrapper">
+                                <span class="input-icon"><i class="bi bi-envelope"></i></span>
+
+                                <input asp-for="Correo"
+                                       type="email"
+                                       class="form-control has-icon"
+                                       placeholder="ejemplo@correo.com"
+                                       autocomplete="email" />
+                            </div>
+
+                            <span asp-validation-for="Correo" class="field-error"></span>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label asp-for="Contrasena" class="field-label">
+                                <span>Contraseña</span>
+                                <span class="required-tag">Requerido</span>
+                            </label>
+
+                            <div class="input-wrapper">
+                                <span class="input-icon"><i class="bi bi-lock"></i></span>
+
+                                <input asp-for="Contrasena"
+                                       type="password"
+                                       class="form-control has-icon has-toggle"
+                                       placeholder="Mínimo 8 caracteres"
+                                       autocomplete="new-password" />
+
+                                <button type="button"
+                                        class="toggle-password"
+                                        aria-label="Mostrar u ocultar contraseña"
+                                        onclick="togglePassword('Contrasena', this)">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                            </div>
+
+                            <span asp-validation-for="Contrasena" class="field-error"></span>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label asp-for="ConfirmarContrasena" class="field-label">
+                                <span>Confirmar contraseña</span>
+                                <span class="required-tag">Requerido</span>
+                            </label>
+
+                            <div class="input-wrapper">
+                                <span class="input-icon"><i class="bi bi-lock"></i></span>
+
+                                <input asp-for="ConfirmarContrasena"
+                                       type="password"
+                                       class="form-control has-icon has-toggle"
+                                       placeholder="Repite tu contraseña"
+                                       autocomplete="new-password" />
+
+                                <button type="button"
+                                        class="toggle-password"
+                                        aria-label="Mostrar u ocultar contraseña"
+                                        onclick="togglePassword('ConfirmarContrasena', this)">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                            </div>
+
+                            <span asp-validation-for="ConfirmarContrasena" class="field-error"></span>
+
+                        </div>
+
+                        <div class="info-note">
+
+                            <span class="info-icon">i</span>
+
+                            <span>
+                                Tu cuenta será creada como usuario. El administrador
+                                del sistema gestiona los permisos.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <section class="section">
+
+                    <div class="section-header">
+                        <div class="section-number">3</div>
+                        <div class="section-name">Foto de perfil</div>
+                        <div class="section-line"></div>
+                    </div>
+
+                    <div class="form-group">
+
+                        <label class="field-label">
+                            <span>Foto de perfil</span>
+                            <span class="required-tag optional">Opcional</span>
+                        </label>
+
+                        <div class="file-drop" id="fotoDropZone">
+
+                            <input asp-for="FotoPerfil"
+                                   type="file"
+                                   class="file-input-hidden"
+                                   accept=".jpg,.jpeg,.png,.webp"
+                                   onchange="handleFotoChange(this)" />
+
+                            <label for="FotoPerfil"
+                                   class="file-drop-label"
+                                   id="fotoDropLabel">
+
+                                <span class="file-drop-icon"><i class="bi bi-image"></i></span>
+
+                                <span class="file-drop-text">
+                                    <strong>Haz clic para subir</strong>
+                                    o arrastra tu foto aquí
+                                </span>
+
+                                <span class="file-drop-hint">
+                                    JPG, JPEG, PNG o WEBP · Máximo 5 MB
+                                </span>
+
+                            </label>
+
+                            <div class="file-drop-preview" id="fotoPreview">
+
+                                <img id="fotoPreviewImg" src="" alt="Vista previa" />
+
+                                <div class="file-drop-preview-info">
+                                    <span id="fotoPreviewName"></span>
+                                </div>
+
+                                <button type="button"
+                                        class="file-drop-remove"
+                                        aria-label="Quitar foto"
+                                        onclick="removeFoto()">
+                                    <i class="bi bi-x-lg"></i>
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                        <span asp-validation-for="FotoPerfil" class="field-error"></span>
+
+                    </div>
+
+                </section>
+
+                <div class="actions">
+
+                    <button type="submit" class="btn btn-create">
+
+                        <span class="btn-icon-left">
+                            <span class="btn-icon"><i class="bi bi-person-plus"></i></span>
+                            Crear mi cuenta
+                        </span>
+
+                        <span class="btn-arrow"><i class="bi bi-arrow-right"></i></span>
+
+                    </button>
+
+                    <a asp-controller="Account"
+                       asp-action="Login"
+                       class="btn btn-back">
+
+                        <span class="btn-icon"><i class="bi bi-arrow-left"></i></span>
+                        Volver al inicio
+
+                    </a>
+
+                </div>
+
+            </form>
+
+            <footer class="register-footer">
+
+                <div class="secure">
+
+                    <span class="secure-icon"><i class="bi bi-shield-check"></i></span>
+
+                    <div class="secure-text">
+                        <strong>Acceso protegido</strong>
+                        <span>Tus datos permanecen seguros con INKORA</span>
+                    </div>
+
+                </div>
+
+                <span class="footer-brand">INKORA</span>
+
+            </footer>
+
+            <script>
+                function togglePassword(fieldId, btn) {
+                    var input = document.getElementById(fieldId);
+                    var icon = btn.querySelector("i");
+                    if (!input) return;
+
+                    if (input.type === "password") {
+                        input.type = "text";
+                        icon.className = "bi bi-eye-slash";
+                    } else {
+                        input.type = "password";
+                        icon.className = "bi bi-eye";
+                    }
+                }
+
+                function handleFotoChange(input) {
+                    var dropLabel = document.getElementById("fotoDropLabel");
+                    var preview = document.getElementById("fotoPreview");
+                    var previewImg = document.getElementById("fotoPreviewImg");
+                    var previewName = document.getElementById("fotoPreviewName");
+
+                    if (input.files && input.files[0]) {
+                        var file = input.files[0];
+                        previewName.textContent = file.name;
+
+                        var reader = new FileReader();
+                        reader.onload = function (e) {
+                            previewImg.src = e.target.result;
+                        };
+                        reader.readAsDataURL(file);
+
+                        dropLabel.style.display = "none";
+                        preview.style.display = "flex";
+                    }
+                }
+
+                function removeFoto() {
+                    var input = document.getElementById("FotoPerfil");
+                    var dropLabel = document.getElementById("fotoDropLabel");
+                    var preview = document.getElementById("fotoPreview");
+
+                    if (input) input.value = "";
+                    dropLabel.style.display = "flex";
+                    preview.style.display = "none";
+                }
+
+                (function () {
+                    var dropZone = document.getElementById("fotoDropZone");
+                    var input = document.getElementById("FotoPerfil");
+                    if (!dropZone || !input) return;
+
+                    ["dragenter", "dragover"].forEach(function (evt) {
+                        dropZone.addEventListener(evt, function (e) {
+                            e.preventDefault();
+                            dropZone.classList.add("drag-active");
+                        });
+                    });
+
+                    ["dragleave", "drop"].forEach(function (evt) {
+                        dropZone.addEventListener(evt, function (e) {
+                            e.preventDefault();
+                            dropZone.classList.remove("drag-active");
+                        });
+                    });
+
+                    dropZone.addEventListener("drop", function (e) {
+                        if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+                            input.files = e.dataTransfer.files;
+                            handleFotoChange(input);
+                        }
+                    });
+                })();
+            </script>
+
+        </section>
+
+    </main>
+
+    <partial name="_ValidationScriptsPartial" />
+
+</body>
+
+</html>
